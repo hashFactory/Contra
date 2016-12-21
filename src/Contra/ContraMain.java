@@ -13,6 +13,7 @@ public class ContraMain extends Applet implements Runnable, KeyListener
         setBackground(new Color(128, 128, 128));
         addKeyListener(this);
         System.out.println("File!");
+        System.out.println(getCodeBase());
     }
 
     public void start()
