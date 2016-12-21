@@ -1,6 +1,5 @@
 package Contra;
 
-import javax.swing.*;
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.KeyEvent;
