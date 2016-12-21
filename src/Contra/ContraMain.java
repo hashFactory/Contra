@@ -14,6 +14,7 @@ public class ContraMain extends Applet implements Runnable, KeyListener
         addKeyListener(this);
         System.out.println("File!");
         System.out.println(getCodeBase());
+        System.out.println(getDocumentBase());
     }
 
     public void start()
