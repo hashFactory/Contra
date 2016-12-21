@@ -1,20 +1,28 @@
 package Contra;
 
+import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
+import javax.swing.*;
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 
 public class ContraMain extends Applet implements Runnable, KeyListener
 {
+    Icon bgIcon;
     public void init()
     {
         setSize(400, 400);
         setBackground(new Color(128, 128, 128));
         addKeyListener(this);
-        System.out.println("File!");
-        System.out.println(getCodeBase());
-        System.out.println(getDocumentBase());
+        System.out.println(getCodeBase() + "./Resources/map_bg.png");
+        bgIcon = new ImageIcon("Resources/map_bg.png");
+
     }
 
     public void start()
@@ -28,6 +36,13 @@ public class ContraMain extends Applet implements Runnable, KeyListener
 
     public void paint(Graphics g)
     {
+        File file = new File(getClass().getResource("/map_bg.png").getFile());
+        BufferedImage image;
+        try{
+            image = ImageIO.read(file);
+            g.drawImage(image, 0, 0, this);
+        }
+        catch (IOException ex) {}
 
     }
 
