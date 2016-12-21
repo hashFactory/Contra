@@ -12,6 +12,7 @@ public class ContraMain extends Applet implements Runnable, KeyListener
         setSize(400, 400);
         setBackground(new Color(128, 128, 128));
         addKeyListener(this);
+        System.out.println("File!");
     }
 
     public void start()
